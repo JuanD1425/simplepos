@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import InputEmail from "./InputEmail";
 import InputPassword from "./InputPassword";
 import CheckRem from "./CheckRem";
@@ -6,7 +6,7 @@ import LoginButton from "./LoginButton";
 import ForgotButton from "./ForgotButton";
 import CreateButton from "./CreateButton";
 
-class UserRegistration extends React.Component {
+class UserRegistration extends Component {
   render() {
     return (
       <div className="p-5">

@@ -12,7 +12,7 @@ class PageNotFound extends React.Component {
           <p className="text-black-50 mb-0">
             It looks like you found a glitch in the matrix...
           </p>
-          <a href="/">← Back to Dashboard</a>
+          <a href="./dashboard">← Back to Dashboard</a>
         </div>
       </div>
     );

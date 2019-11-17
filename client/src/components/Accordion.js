@@ -8,7 +8,7 @@ class Accordion extends React.Component {
       <ul className="nav navbar-nav text-light" id="accordionSidebar">
         <li className="nav-item" role="presentation" />
         <li className="nav-item" role="presentation">
-          <a className="nav-link" href="./register">
+          <a className="nav-link" href="./registration">
             <i className="fas fa-window-maximize" />
             <span>Register</span>
           </a>
