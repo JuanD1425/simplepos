@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "user",
+    "password": "simplePOS",
+    "database": "simplepos_db",
+    "host": "posdb.cxkaiwaift8m.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "user",
+    "password": "simplePOS",
+    "database": "simplepos_db",
+    "host": "posdb.cxkaiwaift8m.us-east-1.rds.amazonaws.com",
+    "dialect": "mysql",
+    "logging": false
+  },
+  "production": {
+    "username": "user",
+    "password": "simplePOS",
+    "database": "simplepos_db",
+    "host": "posdb.cxkaiwaift8m.us-east-1.rds.amazonaws.com",
+    "use_env_variable": "InnoDB",
+    "dialect": "mysql"
+  }
+}
