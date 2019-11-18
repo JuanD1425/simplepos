@@ -5,7 +5,7 @@ class SubmitCreateFacebook extends React.Component {
     return (
       <a
         className="btn btn-primary btn-block text-white btn-facebook btn-user"
-        role="button"
+        role="button" href="/registration"
       >
         <i className="fab fa-facebook-f" />
           Register with Facebook

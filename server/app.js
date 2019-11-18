@@ -11,7 +11,7 @@ var indexRouter = require("./routes/html-routes");
 var userRouter = require("./routes/users");
 
 var app = express();
-const PORT = 3001;
+const PORT = 4000;
 
 const mysql = require("mysql2");
 const connection = mysql.createConnection({
@@ -22,10 +22,11 @@ const connection = mysql.createConnection({
   database: process.env.RDS_DB_NAME
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
   err
-    ? console.log(err + "+++++++++++++++//////////")
-    : console.log("connection********");
+    ?
+    console.log(err + "+++++++++++++++//////////") :
+    console.log("connection********");
 });
 
 require("./routes/html-routes")(app, connection);
@@ -36,7 +37,9 @@ app.set("view engine", "pug");
 app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -44,12 +47,12 @@ app.use("/", indexRouter);
 app.use("/users", userRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -59,7 +62,7 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
@@ -68,8 +71,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync().then(function () {
+  app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
 });

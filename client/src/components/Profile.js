@@ -19,7 +19,7 @@ class Profile extends React.Component {
                 >
                   <i className="fas fa-bars" />
                 </button>
-                <form className="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                {/*<form className="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                   <div className="input-group">
                     <input
                       className="bg-light form-control border-0 small"
@@ -39,10 +39,10 @@ class Profile extends React.Component {
                       className="dropdown-toggle nav-link"
                       data-toggle="dropdown"
                       aria-expanded="false"
-                      href="#"
+                      href="#" 
                     >
                       <i className="fas fa-search" />
-                    </a>
+                    < /a>
                     <div
                       className="dropdown-menu dropdown-menu-right p-3 animated--grow-in"
                       role="menu"
@@ -67,7 +67,8 @@ class Profile extends React.Component {
                       </form>
                     </div>
                   </li>
-                </ul>
+                < /ul>*/
+                }
                 <div className="d-none d-sm-block topbar-divider" />
               </div>
             </nav>

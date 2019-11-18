@@ -5,7 +5,7 @@ class SubmitCreateGoogle extends React.Component {
     return (
       <a
         className="btn btn-primary btn-block text-white btn-google btn-user"
-        role="button"
+        role="button" href="/registration"
       >
         <i className="fab fa-google" />
           Register with Google

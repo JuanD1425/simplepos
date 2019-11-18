@@ -14,6 +14,7 @@ class Dogs extends React.Component {
                   src="assets/img/dogs/image2.jpeg"
                   width={160}
                   height={160}
+                   alt="cute dogs"
                 />
                 <div className="mb-3">
                   <button className="btn btn-primary btn-sm" type="button">
