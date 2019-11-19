@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Switch } from 'react-router'
+import React, { Component } from "react";
+import { Switch } from "react-router";
 
-//import logo from './logo.svg';
-import './App.css';
-import './untitled.css'
-// import PageNotFound from "./components/PageNotFound";
+// import logo from './logo.svg';
+import "./App.css";
+import "./untitled.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+// import PrsageNotFound from "./components/PageNotFound";
 import Inventory from "./components/Inventory";
 import Registration from "./components/Registration/RegistrationPage";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class Index extends Component {
   constructor(props) {
@@ -19,34 +19,77 @@ class Index extends Component {
     };
   }
 
+  componentDidMount() {
+    this.callAPI();
+  }
+
   callAPI() {
     fetch("http://localhost:3000/express_backend")
       .then(res => res.text())
-      .then(res => this.setState({
-        apiResponse: res
-      }));
-  }
-
-  componentWillMount() {
-    this.callAPI();
+      .then(res =>
+        this.setState({
+          apiResponse: res
+        })
+      );
   }
 
   render() {
     return (
       <Router>
-        <div >
+        <div>
           <Switch>
-          <Route path = "/" exact strict render = { () => { return <Login / > ;}} /> 
-          <Route path = "/inventory" exact strict render = { () => { return <Inventory / > ;}}/> 
-          <Route path = "/registration" exact strict render = { () => { return <Registration / > ;}}/> 
-          <Route path = "/profile" exact strict render = { () => { return <Profile / > ;}}/> 
-          {/* <Route exact strict render={ () => { return <PageNotFound />;}}/> */}
-          < /Switch>
-          <p className = "App-intro" > ; {this.state.apiResponse} </p> 
-        </div>  
+            <Route
+              path="/"
+              exact
+              strict
+              render={() => {
+                return <Login />;
+              }}
+            />
+            <Route
+              path="/inventory"
+              exact
+              strict
+              render={() => {
+                return <Inventory />;
+              }}
+            />
+            <Route
+              path="/registration"
+              exact
+              strict
+              render={() => {
+                return <Registration />;
+              }}
+            />
+            <Route
+              path="/profile"
+              exact
+              strict
+              render={() => {
+                return <Profile />;
+              }}
+            />
+            {/* <Route
+              path="/express_backend"
+              exact
+              strict
+              render={() => {
+                return <p className="App-intro">{this.state.apiResponse}</p>;
+              }}
+            /> */}
+            {/* <Route
+              exact
+              strict
+              render={() => {
+                return <PageNotFound />;
+              }}
+            /> */}
+          </Switch>
+        </div>
       </Router>
-  );
-}
+    );
+  }
 }
 
 export default Index;
