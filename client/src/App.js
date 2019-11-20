@@ -23,7 +23,7 @@ class Index extends Component {
     this.callAPI();
   }
 
-  callAPI() {
+  callAPI(input) {
     fetch("http://localhost:3000/express_backend")
       .then(res => res.text())
       .then(res =>
@@ -39,7 +39,7 @@ class Index extends Component {
         <div>
           <Switch>
             <Route
-              path="/"
+              path='/'
               exact
               strict
               render={() => {
@@ -47,7 +47,7 @@ class Index extends Component {
               }}
             />
             <Route
-              path="/inventory"
+              path='/inventory'
               exact
               strict
               render={() => {
@@ -55,7 +55,7 @@ class Index extends Component {
               }}
             />
             <Route
-              path="/registration"
+              path='/registration'
               exact
               strict
               render={() => {
@@ -63,13 +63,14 @@ class Index extends Component {
               }}
             />
             <Route
-              path="/profile"
+              path='/profile'
               exact
               strict
               render={() => {
                 return <Profile />;
               }}
             />
+            <p className='App-intro'> {this.state.apiResponse} </p>;
             {/* <Route
               path="/express_backend"
               exact
